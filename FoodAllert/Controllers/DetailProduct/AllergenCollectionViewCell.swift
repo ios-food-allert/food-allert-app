@@ -10,10 +10,10 @@ import UIKit
 import Kingfisher
 class AllergenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image:UIImageView!
-    @IBOutlet weak var nameAllergen:UILabel?
+    @IBOutlet weak var nameAllergen:UILabel!
     
     func setup(entity:Entity){
-        self.nameAllergen?.text = entity.entity
+        self.nameAllergen.text = entity.entity
         let url = URL(string: entity.imageURL)
         self.image.kf.setImage(with: url)
         
