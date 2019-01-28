@@ -22,7 +22,7 @@ struct API {
         if apiHost == .food{
             self.schema = "https"
             self.host = "world.openfoodfacts.org"
-            self.api = ""
+            self.api = "/api/v0"
         }else{
             self.schema = "https"
             self.host = "api-fa-backend.1d35.starter-us-east-1.openshiftapps.com"
@@ -42,7 +42,7 @@ struct API {
             var relativePath: String = "/"
             switch self {
             case .searchCode:
-                relativePath.append("code")
+                relativePath.append("product")
             case .prediccionFood:
                 relativePath.append("sendAssistantInput")
             }

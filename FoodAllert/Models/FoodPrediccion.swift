@@ -11,12 +11,16 @@ struct FoodPrediccion: Codable {
     let intents: [Intent]
 }
 
-struct Entity: Codable {
+struct Entity: Codable, Equatable {
     let entity: String
     let location: [Int]
     let value: String
-    let confidence: Int
+    let confidence: Double
     let imageURL: String
+    
+    static func == (lhs:Entity, rhs:Entity) -> Bool{
+        return lhs.entity == rhs.entity && lhs.imageURL == rhs.imageURL
+    }
 }
 
 struct Intent: Codable {

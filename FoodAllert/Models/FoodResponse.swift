@@ -9,13 +9,14 @@
 import Foundation
 
 struct FoodResponse: Codable {
-    let page, skip, count: Int
-    let products: [Product]
-    let pageSize: Int
+    let code : String
+    let status : Int
+    let product: Product
+    let statusVerbose:String
     
     enum CodingKeys: String, CodingKey {
-        case page, skip, count, products
-        case pageSize = "page_size"
+        case code, status, product
+        case statusVerbose = "status_verbose"
     }
 }
 
@@ -50,7 +51,6 @@ struct Product: Codable {
     let ingredientsTextWithAllergensEs, genericName: String
     let imageIngredientsSmallURL: String
     let storesTags: [String]
-    let url: String
     let completedT: Int?
     let nutritionGradesTags: [String]
     let servingQuantity: Double?
@@ -60,7 +60,7 @@ struct Product: Codable {
     let tracesFromUser, expirationDate: String?
     let selectedImages: SelectedImages
     let allergensHierarchy: [String]
-    let novaGroup: String
+    let novaGroup: CustomValue
     let imageNutritionThumbURL: String
     let codesTags: [String]
     let quantity, nutritionDataPrepared: String
@@ -110,7 +110,6 @@ struct Product: Codable {
         case genericName = "generic_name"
         case imageIngredientsSmallURL = "image_ingredients_small_url"
         case storesTags = "stores_tags"
-        case url
         case completedT = "completed_t"
         case nutritionGradesTags = "nutrition_grades_tags"
         case servingQuantity = "serving_quantity"
