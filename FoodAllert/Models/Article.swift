@@ -13,4 +13,14 @@ struct Article: Codable {
     let abstract: String
     let imageURL: String
     let articleURL: String
+    
+    init(title: String,
+         abstract: String,
+         imageURL: String,
+         articleURL: String) {
+        self.title = title
+        self.abstract = abstract
+        self.imageURL = imageURL
+        self.articleURL = articleURL
+    }
 }
