@@ -7,17 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
 class ArticlesTableViewController: UITableViewController {
-    /*
-     var articles: [Article] = [
-     Article(title: "Título del artículo 1", overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor purus fermentum est malesuada, ut pulvinar ipsum aliquet. Quisque fringilla tincidunt varius. Pellentesque dignissim porttitor urna ut rutrum. Donec vehicula leo vitae ligula porttitor condimentum. Pellentesque nec nulla sit amet lorem malesuada porta. In scelerisque rhoncus ultrices. Nam et varius dolor. Mauris bibendum lacinia rhoncus. Etiam orci quam, venenatis sit amet lacus eget, pellentesque tristique tortor.", imageURL: "https://www.newsmax.com/Newsmax/files/20/206b0e3b-3e74-43c8-b561-484787e1024f_120_100.jpg", articleURL: "https://www.foodallergy.org/life-with-food-allergies/anaphylaxis/treating-anaphylaxis"),
-     Article(title: "Título del artículo 2", overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor purus fermentum est malesuada, ut pulvinar ipsum aliquet. Quisque fringilla tincidunt varius. Pellentesque dignissim porttitor urna ut rutrum. Donec vehicula leo vitae ligula porttitor condimentum. Pellentesque nec nulla sit amet lorem malesuada porta. In scelerisque rhoncus ultrices. Nam et varius dolor. Mauris bibendum lacinia rhoncus. Etiam orci quam, venenatis sit amet lacus eget, pellentesque tristique tortor.", imageURL: "https://www.newsmax.com/Newsmax/files/20/206b0e3b-3e74-43c8-b561-484787e1024f_120_100.jpg", articleURL: "https://www.foodallergy.org/life-with-food-allergies/anaphylaxis/treating-anaphylaxis"),
-     Article(title: "Título del artículo 3", overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor purus fermentum est malesuada, ut pulvinar ipsum aliquet. Quisque fringilla tincidunt varius. Pellentesque dignissim porttitor urna ut rutrum. Donec vehicula leo vitae ligula porttitor condimentum. Pellentesque nec nulla sit amet lorem malesuada porta. In scelerisque rhoncus ultrices. Nam et varius dolor. Mauris bibendum lacinia rhoncus. Etiam orci quam, venenatis sit amet lacus eget, pellentesque tristique tortor.", imageURL: "https://www.newsmax.com/Newsmax/files/20/206b0e3b-3e74-43c8-b561-484787e1024f_120_100.jpg", articleURL: "https://www.foodallergy.org/life-with-food-allergies/anaphylaxis/treating-anaphylaxis"),
-     Article(title: "Título del artículo 4", overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor purus fermentum est malesuada, ut pulvinar ipsum aliquet. Quisque fringilla tincidunt varius. Pellentesque dignissim porttitor urna ut rutrum. Donec vehicula leo vitae ligula porttitor condimentum. Pellentesque nec nulla sit amet lorem malesuada porta. In scelerisque rhoncus ultrices. Nam et varius dolor. Mauris bibendum lacinia rhoncus. Etiam orci quam, venenatis sit amet lacus eget, pellentesque tristique tortor.", imageURL: "https://www.newsmax.com/Newsmax/files/20/206b0e3b-3e74-43c8-b561-484787e1024f_120_100.jpg", articleURL: "https://www.foodallergy.org/life-with-food-allergies/anaphylaxis/treating-anaphylaxis"),
-     Article(title: "Título del artículo 5", overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor purus fermentum est malesuada, ut pulvinar ipsum aliquet. Quisque fringilla tincidunt varius. Pellentesque dignissim porttitor urna ut rutrum. Donec vehicula leo vitae ligula porttitor condimentum. Pellentesque nec nulla sit amet lorem malesuada porta. In scelerisque rhoncus ultrices. Nam et varius dolor. Mauris bibendum lacinia rhoncus. Etiam orci quam, venenatis sit amet lacus eget, pellentesque tristique tortor.", imageURL: "https://www.newsmax.com/Newsmax/files/20/206b0e3b-3e74-43c8-b561-484787e1024f_120_100.jpg", articleURL: "https://www.foodallergy.org/life-with-food-allergies/anaphylaxis/treating-anaphylaxis"),
-     ]
-     */
     
     var articles: [Article]? {
         didSet {
@@ -62,7 +54,8 @@ class ArticlesTableViewController: UITableViewController {
         guard let article = articles?[indexPath.row] else { return }
         
         if let url = URL(string: article.articleURL) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            //UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            showArticleLink(url)
         }
     }
     
@@ -80,5 +73,13 @@ class ArticlesTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    func showArticleLink(_ url: URL) {
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = true
+        
+        let vc = SFSafariViewController(url: url, configuration: config)
+        present(vc, animated: true)
+    }
     
 }
