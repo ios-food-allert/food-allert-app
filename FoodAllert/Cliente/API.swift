@@ -37,6 +37,7 @@ struct API {
     enum EndPoint {
         case searchCode
         case prediccionFood
+        case articles
         
         var url:String {
             var relativePath: String = "/"
@@ -45,6 +46,8 @@ struct API {
                 relativePath.append("product")
             case .prediccionFood:
                 relativePath.append("sendAssistantInput")
+            case .articles:
+                relativePath.append("getArticlesList")
             }
             return relativePath
         }
