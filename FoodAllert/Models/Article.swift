@@ -10,17 +10,27 @@ import Foundation
 
 struct Article: Codable {
     let title: String
-    let abstract: String
+    let overview: String
     let imageURL: String
     let articleURL: String
     
     init(title: String,
-         abstract: String,
+         overview: String,
          imageURL: String,
          articleURL: String) {
         self.title = title
-        self.abstract = abstract
+        self.overview = overview
         self.imageURL = imageURL
         self.articleURL = articleURL
     }
+    
+    static func create(dictionary: NSDictionary) -> Article? {
+        guard let title = dictionary["title"] as? String else { return nil }
+        guard let overview = dictionary["overview"] as? String else { return nil }
+        guard let imageURL = dictionary["imageURL"] as? String else { return nil }
+        guard let articleURL = dictionary["articleURL"] as? String else { return nil }
+        
+        return Article(title: title, overview: overview, imageURL: imageURL, articleURL: articleURL)
+    }
 }
+

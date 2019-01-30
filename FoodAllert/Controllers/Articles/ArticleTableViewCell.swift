@@ -27,11 +27,10 @@ class ArticleTableViewCell: UITableViewCell {
     
     func update(with article: Article) {
         articleTitle.text = article.title
-        articleAbstract.text = article.abstract
+        articleAbstract.text = article.overview
         if let urlImage = URL(string: article.imageURL) {
             articleImage.load(url: urlImage)
         }
     }
     
 }
-
