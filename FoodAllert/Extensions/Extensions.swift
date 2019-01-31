@@ -50,6 +50,22 @@ extension String {
 }
 
 extension UIColor {
+
+    static var greenDark: UIColor {
+        return UIColor(named: "greenDark")!
+    }
+    static var greenLight: UIColor {
+        return UIColor(named: "greenLight")!
+    }
+    static var greenMedium: UIColor {
+        return UIColor(named: "greenMedium")!
+    }
+    static var greenRegular: UIColor {
+        return UIColor(named: "greenRegular")!
+    }
+
+    static let colors:[UIColor] = [.greenDark,.greenLight,.greenMedium,.greenRegular]
+
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
         let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let scanner = Scanner(string: hexString)
@@ -77,4 +93,13 @@ extension UIColor {
         let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
         return String(format:"#%06x", rgb)
     }
+}
+
+extension Array {
+    
+    func randomItem() -> Element {
+        let index = Int(arc4random_uniform(UInt32(self.count)))
+        return self[index]
+    }
+    
 }

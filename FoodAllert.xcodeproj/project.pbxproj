@@ -15,6 +15,7 @@
 		36A29DC4220298AA00A1E865 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DC2220298AA00A1E865 /* ArticleTableViewCell.swift */; };
 		36A29DC5220298AA00A1E865 /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DC3220298AA00A1E865 /* ArticleTableViewController.swift */; };
 		36A29DC722029A0700A1E865 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DC622029A0700A1E865 /* ArticleService.swift */; };
+		36A29DCA22029F9900A1E865 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DC922029F9900A1E865 /* PreferenceViewController.swift */; };
 		36A7C0382200AF7C00F178C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A7C0372200AF7C00F178C1 /* Assets.xcassets */; };
 		36B6221B21FE915400C763C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B6221A21FE915400C763C1 /* Extensions.swift */; };
 		36B6221D21FEA37D00C763C1 /* AllergenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B6221C21FEA37D00C763C1 /* AllergenCollectionViewCell.swift */; };
@@ -65,6 +66,7 @@
 		36A29DC2220298AA00A1E865 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		36A29DC3220298AA00A1E865 /* ArticleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		36A29DC622029A0700A1E865 /* ArticleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
+		36A29DC922029F9900A1E865 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		36A7C0372200AF7C00F178C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B6221A21FE915400C763C1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		36B6221C21FEA37D00C763C1 /* AllergenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			path = Articles;
 			sourceTree = "<group>";
 		};
+		36A29DC822029F1B00A1E865 /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				36A29DC922029F9900A1E865 /* PreferenceViewController.swift */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
 		36B6221921FE913500C763C1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 		B965FF1A21F001A9009A8684 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				36A29DC822029F1B00A1E865 /* Preference */,
 				36A29DC1220298AA00A1E865 /* Articles */,
 				365846BA21FE620600F0C790 /* DetailProduct */,
 				B965FF1821EFF694009A8684 /* ScannerViewController.swift */,
@@ -525,6 +536,7 @@
 				B965FF2421F14737009A8684 /* FoodResponse.swift in Sources */,
 				36B6221D21FEA37D00C763C1 /* AllergenCollectionViewCell.swift in Sources */,
 				B965FF2621F24407009A8684 /* FoodService.swift in Sources */,
+				36A29DCA22029F9900A1E865 /* PreferenceViewController.swift in Sources */,
 				36A29DC4220298AA00A1E865 /* ArticleTableViewCell.swift in Sources */,
 				365846BC21FE622400F0C790 /* DetailProductViewController.swift in Sources */,
 				36B6221B21FE915400C763C1 /* Extensions.swift in Sources */,

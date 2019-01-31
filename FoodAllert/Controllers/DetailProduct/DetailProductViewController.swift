@@ -70,6 +70,7 @@ class DetailProductViewController: UIViewController {
                     var arrayString = [String]()
                     self.arrayAllergen.forEach({ (entity) in
                         arrayString.append(entity.entityEs.lowercased())
+                        arrayString.append(entity.entityEs.uppercased())
                     })
                     let atributeString = ingredients.withBoldText(boldPartsOfString: arrayString, font: font, boldFont: boldFont)
                     DispatchQueue.main.async {
