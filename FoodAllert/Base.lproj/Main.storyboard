@@ -162,7 +162,7 @@
             </objects>
             <point key="canvasLocation" x="3510" y="-208"/>
         </scene>
-        <!--Detail Product View Controller-->
+        <!--Title-->
         <scene sceneID="iar-MF-fHe">
             <objects>
                 <viewController id="RH4-34-GuY" customClass="DetailProductViewController" customModule="FoodAllert" customModuleProvider="target" sceneMemberID="viewController">
@@ -265,6 +265,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Hf1-bx-Mlq"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="sgw-tm-rdR"/>
                     <connections>
                         <outlet property="productAllergens" destination="T9I-kr-WWp" id="7Yu-0g-jSJ"/>
                         <outlet property="productCode" destination="rdV-DY-WDq" id="nqt-Z4-TmE"/>
