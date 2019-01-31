@@ -174,7 +174,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         let bezierPath = UIBezierPath()
         
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.blue.cgColor
+        shapeLayer.strokeColor = UIColor.greenDark.cgColor
         shapeLayer.lineWidth = strokeWidth
         
         guard let horizontalPosition = xPosition else { return shapeLayer }

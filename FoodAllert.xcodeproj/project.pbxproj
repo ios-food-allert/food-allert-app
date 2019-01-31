@@ -16,6 +16,7 @@
 		36A29DC5220298AA00A1E865 /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DC3220298AA00A1E865 /* ArticleTableViewController.swift */; };
 		36A29DC722029A0700A1E865 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DC622029A0700A1E865 /* ArticleService.swift */; };
 		36A29DCA22029F9900A1E865 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DC922029F9900A1E865 /* PreferenceViewController.swift */; };
+		36A29DCC2202B88F00A1E865 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DCB2202B88F00A1E865 /* Preferences.swift */; };
 		36A7C0382200AF7C00F178C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A7C0372200AF7C00F178C1 /* Assets.xcassets */; };
 		36B6221B21FE915400C763C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B6221A21FE915400C763C1 /* Extensions.swift */; };
 		36B6221D21FEA37D00C763C1 /* AllergenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B6221C21FEA37D00C763C1 /* AllergenCollectionViewCell.swift */; };
@@ -67,6 +68,7 @@
 		36A29DC3220298AA00A1E865 /* ArticleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		36A29DC622029A0700A1E865 /* ArticleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		36A29DC922029F9900A1E865 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		36A29DCB2202B88F00A1E865 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		36A7C0372200AF7C00F178C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B6221A21FE915400C763C1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		36B6221C21FEA37D00C763C1 /* AllergenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				B965FF2321F14737009A8684 /* FoodResponse.swift */,
 				B965FF3121F45FCC009A8684 /* CustomValue.swift */,
 				365846B621FCE15F00F0C790 /* FoodPrediccion.swift */,
+				36A29DCB2202B88F00A1E865 /* Preferences.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				36B6221B21FE915400C763C1 /* Extensions.swift in Sources */,
 				365846B921FD8C7F00F0C790 /* FoodPrediccionService.swift in Sources */,
 				B965FF1F21F13894009A8684 /* Client.swift in Sources */,
+				36A29DCC2202B88F00A1E865 /* Preferences.swift in Sources */,
 				36A29DBE2202985800A1E865 /* Article.swift in Sources */,
 				E33E484521DC3314007E0F0C /* AppDelegate.swift in Sources */,
 				365846B721FCE15F00F0C790 /* FoodPrediccion.swift in Sources */,
