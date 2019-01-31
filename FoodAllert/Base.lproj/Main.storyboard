@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="161.46926536731635"/>
+            <point key="canvasLocation" x="1946" y="-188"/>
         </scene>
         <!--Speech View Controller-->
         <scene sceneID="n3x-6J-7De">
@@ -88,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eH2-QQ-hmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3510" y="584"/>
+            <point key="canvasLocation" x="3919" y="-508"/>
         </scene>
         <!--Scanner View Controller-->
         <scene sceneID="ObO-MU-cLm">
@@ -160,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7c9-YE-bcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3510" y="-208"/>
+            <point key="canvasLocation" x="3919" y="-1300"/>
         </scene>
         <!--Title-->
         <scene sceneID="iar-MF-fHe">
@@ -277,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfd-rK-Wa0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2672.8000000000002" y="159.60591133004928"/>
+            <point key="canvasLocation" x="3081" y="-932"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="R72-Ug-tl9">
@@ -288,20 +289,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.078431372550000003" green="0.30196078430000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="dZP-3v-xTj" kind="relationship" relationship="viewControllers" id="ZkJ-p7-Dyj"/>
+                        <segue destination="7ms-vL-fke" kind="relationship" relationship="viewControllers" id="vIv-2o-SS6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycj-Vx-eka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-26.399999999999999" y="162.3688155922039"/>
         </scene>
-        <!--Item-->
+        <!--NavigationArticulos-->
+        <scene sceneID="aOn-he-HWC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Articles" referencedIdentifier="NavigationArticulos" id="7ms-vL-fke" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Articulos" image="144d53-health-book-filled" id="jYz-RF-TNa">
+                        <color key="badgeColor" name="greenDark"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHV-lj-A89" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="452"/>
+        </scene>
+        <!--Inicio-->
         <scene sceneID="nub-cc-NaJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dZP-3v-xTj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wyM-7Z-Al1"/>
+                    <tabBarItem key="tabBarItem" title="Inicio" image="144d53-home-filled" id="wyM-7Z-Al1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kVm-hF-w64">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -314,10 +329,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aT-3c-eOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752.79999999999995" y="161.46926536731635"/>
+            <point key="canvasLocation" x="1044" y="-188"/>
         </scene>
     </scenes>
     <resources>
+        <image name="144d53-health-book-filled" width="69" height="69"/>
+        <image name="144d53-home-filled" width="69" height="69"/>
         <image name="cross" width="40" height="40"/>
+        <namedColor name="greenDark">
+            <color red="0.078431372549019607" green="0.30196078431372547" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
