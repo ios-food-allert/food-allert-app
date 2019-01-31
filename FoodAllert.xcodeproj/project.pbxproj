@@ -10,6 +10,7 @@
 		365846B721FCE15F00F0C790 /* FoodPrediccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365846B621FCE15F00F0C790 /* FoodPrediccion.swift */; };
 		365846B921FD8C7F00F0C790 /* FoodPrediccionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365846B821FD8C7F00F0C790 /* FoodPrediccionService.swift */; };
 		365846BC21FE622400F0C790 /* DetailProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365846BB21FE622400F0C790 /* DetailProductViewController.swift */; };
+		36A7C0382200AF7C00F178C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A7C0372200AF7C00F178C1 /* Assets.xcassets */; };
 		36B6221B21FE915400C763C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B6221A21FE915400C763C1 /* Extensions.swift */; };
 		36B6221D21FEA37D00C763C1 /* AllergenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B6221C21FEA37D00C763C1 /* AllergenCollectionViewCell.swift */; };
 		3CEB0B0DCE0CF63E92E51DF4 /* Pods_FoodAllert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D7183AF0226503ABCEE6DF /* Pods_FoodAllert.framework */; };
@@ -26,7 +27,6 @@
 		E33E484521DC3314007E0F0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E484421DC3314007E0F0C /* AppDelegate.swift */; };
 		E33E484721DC3314007E0F0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E484621DC3314007E0F0C /* ViewController.swift */; };
 		E33E484A21DC3314007E0F0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33E484821DC3314007E0F0C /* Main.storyboard */; };
-		E33E484C21DC3315007E0F0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E33E484B21DC3315007E0F0C /* Assets.xcassets */; };
 		E33E484F21DC3315007E0F0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33E484D21DC3315007E0F0C /* LaunchScreen.storyboard */; };
 		E33E485A21DC3316007E0F0C /* FoodAllertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E485921DC3316007E0F0C /* FoodAllertTests.swift */; };
 		E33E486521DC3316007E0F0C /* FoodAllertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E486421DC3316007E0F0C /* FoodAllertUITests.swift */; };
@@ -55,6 +55,7 @@
 		365846B621FCE15F00F0C790 /* FoodPrediccion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPrediccion.swift; sourceTree = "<group>"; };
 		365846B821FD8C7F00F0C790 /* FoodPrediccionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPrediccionService.swift; sourceTree = "<group>"; };
 		365846BB21FE622400F0C790 /* DetailProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductViewController.swift; sourceTree = "<group>"; };
+		36A7C0372200AF7C00F178C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B6221A21FE915400C763C1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		36B6221C21FEA37D00C763C1 /* AllergenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenCollectionViewCell.swift; sourceTree = "<group>"; };
 		3C5FED80EE537609AAEF0BC8 /* Pods_FoodAllertTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodAllertTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +79,6 @@
 		E33E484421DC3314007E0F0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E33E484621DC3314007E0F0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E33E484921DC3314007E0F0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E33E484B21DC3315007E0F0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E33E484E21DC3315007E0F0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E33E485021DC3315007E0F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E33E485521DC3316007E0F0C /* FoodAllertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodAllertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +209,7 @@
 		E33E484321DC3314007E0F0C /* FoodAllert */ = {
 			isa = PBXGroup;
 			children = (
+				36A7C0372200AF7C00F178C1 /* Assets.xcassets */,
 				36B6221921FE913500C763C1 /* Extensions */,
 				B965FF2721F24415009A8684 /* Services */,
 				B965FF2221F13915009A8684 /* Models */,
@@ -217,7 +218,6 @@
 				E33E484421DC3314007E0F0C /* AppDelegate.swift */,
 				E33E484621DC3314007E0F0C /* ViewController.swift */,
 				E33E484821DC3314007E0F0C /* Main.storyboard */,
-				E33E484B21DC3315007E0F0C /* Assets.xcassets */,
 				E33E484D21DC3315007E0F0C /* LaunchScreen.storyboard */,
 				E33E485021DC3315007E0F0C /* Info.plist */,
 			);
@@ -364,7 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E33E484F21DC3315007E0F0C /* LaunchScreen.storyboard in Resources */,
-				E33E484C21DC3315007E0F0C /* Assets.xcassets in Resources */,
+				36A7C0382200AF7C00F178C1 /* Assets.xcassets in Resources */,
 				E33E484A21DC3314007E0F0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -53,7 +53,7 @@ class DetailProductViewController: UIViewController {
                 if let product = results.resultObject?.product{
                     self.updateUI(product: product)
                     
-                    self.searchAllergens(ingredients: product.ingredientsTextWithAllergensEs)
+                    self.searchAllergens(ingredients: product.ingredientsTextEs)
                 }
             }
         }
@@ -65,8 +65,16 @@ class DetailProductViewController: UIViewController {
                 guard let prediccion = results.resultObject else {return}
                 if prediccion.entities.count > 0{
                     self.arrayAllergen = prediccion.entities.removeDuplicates()
+                    let font = UIFont.systemFont(ofSize: 14)
+                    let boldFont = UIFont.boldSystemFont(ofSize: 16)
+                    var arrayString = [String]()
+                    self.arrayAllergen.forEach({ (entity) in
+                        arrayString.append(entity.entityEs.lowercased())
+                    })
+                    let atributeString = ingredients.withBoldText(boldPartsOfString: arrayString, font: font, boldFont: boldFont)
                     DispatchQueue.main.async {
                         self.productAllergens.reloadData()
+                        self.productIngredientes.attributedText = atributeString
                     }
                 }
             }
@@ -74,8 +82,8 @@ class DetailProductViewController: UIViewController {
     }
     
     func updateUI(product:Product){
-        let ingredients = product.ingredientsTextWithAllergensEs
-        let nameProduct = product.genericNameEs
+        let ingredients = product.ingredientsTextEs
+        let nameProduct = product.productNameEs//product.genericNameEs
         let brand = product.brands
         let urlImage = product.imageFrontURL
         let code  = product.code

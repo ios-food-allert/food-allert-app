@@ -13,7 +13,7 @@ class AllergenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameAllergen:UILabel!
     
     func setup(entity:Entity){
-        self.nameAllergen.text = entity.entity
+        self.nameAllergen.text = entity.entityEs
         let url = URL(string: entity.imageURL)
         self.image.kf.setImage(with: url)
         
