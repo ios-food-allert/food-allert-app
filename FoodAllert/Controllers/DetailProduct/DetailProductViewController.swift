@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class DetailProductViewController: UIViewController {
     @IBOutlet weak var productName:UILabel!
@@ -27,6 +28,11 @@ class DetailProductViewController: UIViewController {
         }else{
             performSegue(withIdentifier: "speech_segue", sender: nil)
         }
+        
+        self.productName.text = ""
+        self.productCode.text = ""
+        self.title = "Food Allert"
+        self.productIngredientes.text = ""
     }
     
     
@@ -41,7 +47,8 @@ class DetailProductViewController: UIViewController {
             let VC = segue.destination as! ScannerViewController
             VC.delegate = self
         }else if segue.identifier == "speech_segue"{
-            let VC = segue.identifier as! SpeechViewController
+            let VC = segue.destination as! SpeechViewController
+            VC.delegate = self
         }
      }
     
@@ -71,12 +78,25 @@ class DetailProductViewController: UIViewController {
                     self.arrayAllergen.forEach({ (entity) in
                         arrayString.append(entity.entityEs.lowercased())
                         arrayString.append(entity.entityEs.uppercased())
+                        arrayString.append(entity.entity.lowercased())
                     })
                     let atributeString = ingredients.withBoldText(boldPartsOfString: arrayString, font: font, boldFont: boldFont)
                     DispatchQueue.main.async {
+                        let banner:NotificationBanner
+                        if Preferences.sharedInstance.existConcidence(allergens: arrayString){
+                            banner = NotificationBanner(title: "Peligro", subtitle: "Este producto tiene allergenos que pueden causarte daño", style: .danger)
+                            
+                        }else{
+                            banner = NotificationBanner(title: "Confiable", subtitle: "Este producto no tiene alergenos", style: .success)
+                        }
+                        banner.show()
                         self.productAllergens.reloadData()
                         self.productIngredientes.attributedText = atributeString
                     }
+                }else{
+                    let banner = NotificationBanner(title: "Confiable", subtitle: "Este producto no tiene alergenos", style: .success)
+                    banner.show()
+                    self.productIngredientes.text = ingredients
                 }
             }
         }
@@ -119,4 +139,13 @@ extension DetailProductViewController: UICollectionViewDataSource, UICollectionV
         return cell
     }
 
+}
+
+extension DetailProductViewController: SpeechViewControllerDelegate{
+    func textDetected(string: String) {
+        self.title = "Food Allert"
+        self.productName.text = "Sin información"
+        self.productCode.text = "Barcode: Sin información"
+        self.searchAllergens(ingredients: string)
+    }
 }

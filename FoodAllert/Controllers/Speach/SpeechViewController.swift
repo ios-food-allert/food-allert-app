@@ -9,10 +9,18 @@
 import UIKit
 import Speech
 
+protocol SpeechViewControllerDelegate: class {
+    func textDetected(string: String)
+}
+
 class SpeechViewController: UIViewController {
 
-    @IBOutlet weak var detectedTextLabel: UILabel!
+    @IBOutlet weak var detectedTextLabel: UITextView!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var containerButton: UIView!
+    
+    weak var delegate: SpeechViewControllerDelegate?
+    
     
     let audioEngine = AVAudioEngine()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale(identifier: "es-MX"))
@@ -24,22 +32,48 @@ class SpeechViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        containerButton.layer.cornerRadius = startButton.frame.size.width / 2
+        startButton.backgroundColor = UIColor.gray
+        startButton.layer.cornerRadius = startButton.frame.size.width / 2
         self.requestSpeechAuthorization()
     }
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
-        if isRecording == true {
-            //audioEngine.stop()
+        if isRecording {
+            request.endAudio()
+            audioEngine.stop()
             //recognitionTask?.cancel()
             self.cancelRecording()
             isRecording = false
-            startButton.backgroundColor = UIColor.gray
+            
+            UIView.animate(withDuration: 1) {
+                self.startButton.frame = CGRect(x: (self.startButton.frame.origin.x - 3.5), y: (self.startButton.frame.origin.y - 3.5), width: 57, height: 57)
+                self.startButton.backgroundColor = UIColor.gray
+                self.startButton.layer.cornerRadius = self.startButton.frame.size.width / 2
+            }
+            
+//            startButton.backgroundColor = UIColor.gray
+//            startButton.layer.cornerRadius = startButton.frame.size.width / 2
         } else {
             self.request = SFSpeechAudioBufferRecognitionRequest()
             self.recordAndRecognizeSpeech()
             isRecording = true
-            startButton.backgroundColor = UIColor.red
+            UIView.animate(withDuration: 1) {
+                self.startButton.frame = CGRect(x: (self.startButton.frame.origin.x + 3.5), y: (self.startButton.frame.origin.y + 3.5), width: 50, height: 50)
+                self.startButton.backgroundColor = UIColor.red
+                self.startButton.layer.cornerRadius = 10
+            }
+//
         }
+    }
+    
+    @IBAction func continueSpeeach(){
+        self.delegate?.textDetected(string: detectedTextLabel.text)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelScan(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     func cancelRecording() {
@@ -60,31 +94,35 @@ class SpeechViewController: UIViewController {
         do {
             try audioEngine.start()
         } catch {
-            self.sendAlert(message: "There has been an audio engine error.")
+            self.sendAlert(message: "Ha habido un error en el motor de audio.")
             return print(error)
         }
         guard let myRecognizer = SFSpeechRecognizer() else {
-            self.sendAlert(message: "Speech recognition is not supported for your current locale.")
+            self.sendAlert(message: "El reconocimiento de voz no es compatible con su ubicación actual.")
             return
         }
         if !myRecognizer.isAvailable {
-            self.sendAlert(message: "Speech recognition is not currently available. Check back at a later time.")
+            self.sendAlert(message: "El reconocimiento de voz no está disponible actualmente. Vuelve a consultar más tarde.")
             // Recognizer is not available right now
             return
         }
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
-            if let result = result {
-                
-                let bestString = result.bestTranscription.formattedString
-                self.detectedTextLabel.text = bestString
-                
-                
-                for segment in result.bestTranscription.segments {
-                    let indexTo = bestString.index(bestString.startIndex, offsetBy: segment.substringRange.location)
+            if result != nil {
+                if let result = result {
+                    
+                    let bestString = result.bestTranscription.formattedString
+                    self.detectedTextLabel.text = bestString
+                    
+                    
+                    for segment in result.bestTranscription.segments {
+                        let indexTo = bestString.index(bestString.startIndex, offsetBy: segment.substringRange.location)
+                    }
+                    
+                } else if let error = error {
+                    self.sendAlert(message: "Ha habido un error de reconocimiento de voz.")
+                    print(error)
                 }
-            } else if let error = error {
-                self.sendAlert(message: "There has been a speech recognition error.")
-                print(error)
+            
             }
         })
     }
@@ -111,7 +149,7 @@ class SpeechViewController: UIViewController {
     }
     
     func sendAlert(message: String) {
-        let alert = UIAlertController(title: "Speech Recognizer Error", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error del reconocedor de voz", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 class Preferences{
     static let sharedInstance = Preferences()
     private let userDefaults = UserDefaults.standard
@@ -42,6 +42,13 @@ class Preferences{
     func existPreferences() -> Bool{
         guard (self.userDefaults.object(forKey: "allergens") as? String) != nil else {return false}
         return true
+    }
+    
+    func saveDataUser(name: String, image: UIImage){
+        
+        self.userDefaults.set(image, forKey: "imageProfile")
+        self.userDefaults.set(name, forKey: "nameProfile")
+        
     }
     
 }
