@@ -9,6 +9,7 @@ target 'FoodAllert' do
   pod 'Kingfisher', '~> 5.0'
   pod 'NotificationBannerSwift'
   pod "Magnetic"
+  pod 'WhatsNewKit'
 
 
   target 'FoodAllertTests' do
