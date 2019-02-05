@@ -61,6 +61,21 @@ class DetailProductViewController: UIViewController {
                     self.updateUI(product: product)
                     
                     self.searchAllergens(ingredients: product.ingredientsTextEs)
+                }else{
+                    let alert = UIAlertController(title: "Alerta", message: "No se encontro el producto.\n ¿Quieres dictarme los ingredientes?", preferredStyle: .alert)
+                    let speech = UIAlertAction(title: "Si, Dictar", style: .default, handler: { (action) in
+                        
+                        self.performSegue(withIdentifier: "speech_segue", sender: nil)
+                    })
+                    
+                    let cancel = UIAlertAction(title: "Cancelar", style: .destructive, handler: { action in
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                    
+                    alert.addAction(speech)
+                    alert.addAction(cancel)
+                    
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }
@@ -106,7 +121,6 @@ class DetailProductViewController: UIViewController {
         let ingredients = product.ingredientsTextEs
         let nameProduct = product.productNameEs//product.genericNameEs
         let brand = product.brands
-        let urlImage = product.imageFrontURL
         let code  = product.code
         
         self.productName.text = nameProduct

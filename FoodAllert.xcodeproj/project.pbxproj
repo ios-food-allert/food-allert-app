@@ -11,6 +11,7 @@
 		365846B921FD8C7F00F0C790 /* FoodPrediccionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365846B821FD8C7F00F0C790 /* FoodPrediccionService.swift */; };
 		365846BC21FE622400F0C790 /* DetailProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365846BB21FE622400F0C790 /* DetailProductViewController.swift */; };
 		365FE72922061D8B001DB031 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365FE72822061D8B001DB031 /* ProfileViewController.swift */; };
+		365FE72C2206241F001DB031 /* NewFeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365FE72B2206241E001DB031 /* NewFeaturesViewController.swift */; };
 		36A29DBE2202985800A1E865 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DBD2202985800A1E865 /* Article.swift */; };
 		36A29DC02202986A00A1E865 /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A29DBF2202986A00A1E865 /* Articles.storyboard */; };
 		36A29DC4220298AA00A1E865 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A29DC2220298AA00A1E865 /* ArticleTableViewCell.swift */; };
@@ -64,6 +65,7 @@
 		365846B821FD8C7F00F0C790 /* FoodPrediccionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPrediccionService.swift; sourceTree = "<group>"; };
 		365846BB21FE622400F0C790 /* DetailProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductViewController.swift; sourceTree = "<group>"; };
 		365FE72822061D8B001DB031 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		365FE72B2206241E001DB031 /* NewFeaturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewFeaturesViewController.swift; path = FoodAllert/Controllers/NewFeaturesViewController.swift; sourceTree = SOURCE_ROOT; };
 		36A29DBD2202985800A1E865 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		36A29DBF2202986A00A1E865 /* Articles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Articles.storyboard; sourceTree = "<group>"; };
 		36A29DC2220298AA00A1E865 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		365FE72A2206240D001DB031 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				365FE72B2206241E001DB031 /* NewFeaturesViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		36A29DC1220298AA00A1E865 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		B965FF1A21F001A9009A8684 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				365FE72A2206240D001DB031 /* News */,
 				365FE72722061D52001DB031 /* Profile */,
 				365FE72622060038001DB031 /* Speach */,
 				36A29DC822029F1B00A1E865 /* Preference */,
@@ -501,6 +512,7 @@
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/WhatsNewKit/WhatsNewKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -511,6 +523,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WhatsNewKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -548,6 +561,7 @@
 			files = (
 				36A29DC722029A0700A1E865 /* ArticleService.swift in Sources */,
 				B965FF3221F45FCD009A8684 /* CustomValue.swift in Sources */,
+				365FE72C2206241F001DB031 /* NewFeaturesViewController.swift in Sources */,
 				B965FF2021F13894009A8684 /* API.swift in Sources */,
 				B965FF2E21F24A2F009A8684 /* ErrorResult.swift in Sources */,
 				B965FF1C21F001C9009A8684 /* SpeechViewController.swift in Sources */,

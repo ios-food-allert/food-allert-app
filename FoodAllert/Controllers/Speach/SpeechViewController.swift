@@ -46,24 +46,20 @@ class SpeechViewController: UIViewController {
             self.cancelRecording()
             isRecording = false
             
-            UIView.animate(withDuration: 1) {
+            UIView.animate(withDuration: 0.5) {
                 self.startButton.frame = CGRect(x: (self.startButton.frame.origin.x - 3.5), y: (self.startButton.frame.origin.y - 3.5), width: 57, height: 57)
                 self.startButton.backgroundColor = UIColor.gray
                 self.startButton.layer.cornerRadius = self.startButton.frame.size.width / 2
             }
-            
-//            startButton.backgroundColor = UIColor.gray
-//            startButton.layer.cornerRadius = startButton.frame.size.width / 2
         } else {
             self.request = SFSpeechAudioBufferRecognitionRequest()
             self.recordAndRecognizeSpeech()
             isRecording = true
-            UIView.animate(withDuration: 1) {
+            UIView.animate(withDuration: 0.5) {
                 self.startButton.frame = CGRect(x: (self.startButton.frame.origin.x + 3.5), y: (self.startButton.frame.origin.y + 3.5), width: 50, height: 50)
                 self.startButton.backgroundColor = UIColor.red
                 self.startButton.layer.cornerRadius = 10
             }
-//
         }
     }
     

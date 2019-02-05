@@ -11,7 +11,7 @@ import Foundation
 struct FoodResponse: Codable {
     let code : String
     let status : Int
-    let product: Product
+    let product: Product?
     let statusVerbose:String
     
     enum CodingKeys: String, CodingKey {
