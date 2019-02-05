@@ -36,12 +36,34 @@ class FoodAllertTests: XCTestCase {
         let promise = expectation(description: "Retrieve response from service")
         FoodPrediccionService.sharedInstance.search(ingredient: ingredient) { (results) in
             let foodPrediccion = results.resultObject
-            print(foodPrediccion?.entities)
             promise.fulfill()
             XCTAssertGreaterThan(foodPrediccion?.entities.count ?? 0, 0)
         }
         waitForExpectations(timeout: 30, handler: nil)
         
+    }
+    
+    
+    func testSearchProductCode(){
+        let code = "7506174500207"
+        let promise = expectation(description: "Retrieve response from service")
+        FoodService.sharedInstance.search(code: code) { (result) in
+            let food = result.resultObject
+            promise.fulfill()
+            XCTAssertNotNil(food?.product)
+        }
+        waitForExpectations(timeout: 30, handler: nil)
+    }
+    
+    func testNotFoundProduct(){
+        let code = "750617450020"
+        let promise = expectation(description: "Retrieve response from service")
+        FoodService.sharedInstance.search(code: code) { (result) in
+            let food = result.resultObject
+            promise.fulfill()
+            XCTAssertEqual(food?.status, 0)
+        }
+        waitForExpectations(timeout: 30, handler: nil)
     }
 
 }
