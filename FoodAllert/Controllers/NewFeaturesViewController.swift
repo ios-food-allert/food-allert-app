@@ -28,7 +28,7 @@ class NewFeaturesViewController: UIViewController {
         let AvenirNextfontItems = UIFont(name: "AvenirNext-Regular", size: UIFont.systemFontSize)!
         let AvenirNextfontButton = UIFont(name: "AvenirNext-Bold", size: 20)!
         
-        configuration.backgroundColor = .white
+        configuration.backgroundColor = UIColor(hexString: "#e4eddb")
         
         configuration.titleView.titleColor = UIColor(hexString: "#144d53")
         configuration.titleView.animation = .slideUp
