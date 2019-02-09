@@ -74,6 +74,7 @@
                                         <constraint firstAttribute="trailing" secondItem="QGB-Wy-sLQ" secondAttribute="trailing" id="swA-Zl-eOo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" name="greenLight"/>
                                 <connections>
                                     <outlet property="articleAbstract" destination="Kze-zf-hPR" id="n0O-kF-x0B"/>
                                     <outlet property="articleImage" destination="017-FE-2Qz" id="yCO-eW-yV1"/>
@@ -86,7 +87,7 @@
                             <outlet property="delegate" destination="vun-Td-CfS" id="87F-AI-PXT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Articulos" id="DaQ-f9-QS7"/>
+                    <navigationItem key="navigationItem" title="Artículos y Tips" id="DaQ-f9-QS7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pd5-Tc-hCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
