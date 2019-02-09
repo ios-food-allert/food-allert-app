@@ -54,20 +54,21 @@ class HomeViewController: UIViewController {
         let AvenirNextfontItems = UIFont(name: "AvenirNext-Regular", size: UIFont.systemFontSize)!
         let AvenirNextfontButton = UIFont(name: "AvenirNext-Bold", size: 20)!
         
-        configuration.backgroundColor = .white
+        configuration.backgroundColor = .greenLight
         
-        configuration.titleView.titleColor = UIColor(hexString: "#144d53")
+        configuration.titleView.titleColor = .greenMedium
         configuration.titleView.animation = .slideUp
         configuration.titleView.titleFont = AvenirNextfontTitle
         
         configuration.itemsView.titleFont = AvenirNextfontItemsTitle
-        configuration.itemsView.titleColor = UIColor(hexString: "#144d53")
+        configuration.itemsView.titleColor = .greenMedium
         configuration.itemsView.animation = .slideRight
         configuration.itemsView.subtitleFont = AvenirNextfontItems
         
-        configuration.completionButton.backgroundColor = UIColor(hexString: "#144d53")
+        configuration.completionButton.backgroundColor = .greenMedium
         configuration.completionButton.titleFont = AvenirNextfontButton
         configuration.completionButton.title = "Continuar"
+        configuration.completionButton.titleColor = .greenLight
         configuration.completionButton.animation = .slideDown
         configuration.completionButton.action = .custom(action: { [weak self] whatsNewViewController in
             self?.dismiss(animated: true, completion: nil)
