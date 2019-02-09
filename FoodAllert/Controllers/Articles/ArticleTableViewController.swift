@@ -59,9 +59,11 @@ class ArticlesTableViewController: UITableViewController {
         }
     }
     
+    /*
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Artículos y Tips"
     }
+    */
     
     
     /*
